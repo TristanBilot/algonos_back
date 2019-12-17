@@ -1,0 +1,25 @@
+{
+  "name": "algonos",
+  "version": "1.0.0",
+  "description": "Algonos app's back end",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TristanBilot/algonos_back.git"
+  },
+  "author": "Tristan Bilot",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TristanBilot/algonos_back/issues"
+  },
+  "homepage": "https://github.com/TristanBilot/algonos_back#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.0",
+    "mongoose": "^5.8.1"
+  }
+}
