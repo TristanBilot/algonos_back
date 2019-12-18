@@ -10,7 +10,9 @@ app.use(express.json());
 
 //Routes
 const coursesRoute = require('./routes/courses.js');
+const categoriesRoute = require('./routes/categories.js');
 app.use('/courses', coursesRoute);
+app.use('/categories', categoriesRoute);
 
 //Server launch
 app.listen(port, () =>  {
@@ -21,12 +23,6 @@ app.listen(port, () =>  {
 mongoose.connect(process.env.DB_CONNECTION, {useUnifiedTopology: true}, () => {
     console.log('connected to MongoDB !');
 });
-
-var db = mongoose.connection;
-
-//Bind connection to error event (to get notification of connection errors)
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
-
 mongoose.connection.on('error', err => {
     logError(err);
 });

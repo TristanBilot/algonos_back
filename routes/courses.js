@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const Course = require('../models/Course');
+const Category = require('../models/Category');
 
-router.get('/', (req, res) => {
-    res.send([{data_structure: "Data structures"}, {algorithm: "Algorithm"}]);
-});
+// router.get('/', (req, res) => {
+//     res.send([{data_structure: "Data structures"}, {algorithm: "Algorithm"}]);
+// });
 
 router.get('/add/:title', (req, res) => {
     const course = new Course({
@@ -28,7 +29,7 @@ router.get('/find', async (req, res) => {
     }
 });
 
-var deleteById = (id) => {
+var deleteCourseById = (id) => {
     Course.findOneAndRemove({_id: id}, (err) => {
         if (err) { console.log('failed to delete', err); }
         else { console.log('delete is a success'); }
@@ -45,9 +46,25 @@ var addCourse = (name) => {
     });
 }
 
-addCourse("Algorithm");
-addCourse("Data Structures");
-addCourse("Machine Learning");
+var addCategory = (name) => {
+    const category = new Category({
+        name: "Algorithm",
+        courses: [Course],
+        difficulty: String
+    });
+    category.save(function (err) {
+        if (err) return handleError(err);
+        console.log('saved !')
+    });
+}
+
+deleteCourseById("5dfa3824bf4358c38294f328");
+deleteCourseById("5dfa3824bf4358c38294f329");
+deleteCourseById("5dfa3824bf4358c38294f32a");
+
+// addCourse("Algorithm");
+// addCourse("Data Structures");
+// addCourse("Machine Learning");
 
 // const course = new Course({
 //     title: "Tristan"
