@@ -5,6 +5,7 @@ require('dotenv/config');
 const port = 8080;
 let app = express();
 
+//Requirements to use body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -16,13 +17,14 @@ app.use('/categories', categoriesRoute);
 
 //Server launch
 app.listen(port, () =>  {
-    console.log('server started');
+    console.log('[ ok ] server started on port ' + port);
 })
 
 //DB Connection
 mongoose.connect(process.env.DB_CONNECTION, {useUnifiedTopology: true}, () => {
-    console.log('connected to MongoDB !');
+    console.log('[ ok ] connected to database');
 });
+
 mongoose.connection.on('error', err => {
     console.log(err);
 });
