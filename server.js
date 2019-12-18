@@ -21,3 +21,12 @@ app.listen(port, () =>  {
 mongoose.connect(process.env.DB_CONNECTION, {useUnifiedTopology: true}, () => {
     console.log('connected to MongoDB !');
 });
+
+var db = mongoose.connection;
+
+//Bind connection to error event (to get notification of connection errors)
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
+mongoose.connection.on('error', err => {
+    logError(err);
+});
