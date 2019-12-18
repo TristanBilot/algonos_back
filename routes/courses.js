@@ -29,6 +29,24 @@ router.get('/find', async (req, res) => {
     }
 });
 
+
+
+router.get('/findWithCategoryId/:id', async (req, res) => {
+    try {
+        const courseList = await Course.find({categoryId: req.params.id})
+        .then(function (courses) {
+            console.log(courses);
+            res.json(courses);
+        });
+    } catch (err) {
+        res.json({ message: err });
+    }
+});
+
+
+
+
+
 var deleteCourseById = (id) => {
     Course.findOneAndRemove({_id: id}, (err) => {
         if (err) { console.log('failed to delete', err); }
@@ -46,11 +64,32 @@ var addCourse = (name) => {
     });
 }
 
-var addCategory = (name) => {
+const course1 = new Course({
+    title: "Stacks",
+    image: "nil",
+    content: "Stacks description...",
+    categoryId: "5dfa71a7e846280f4b75a4c9"
+});
+
+const course2 = new Course({
+    title: "Queues",
+    image: "nil",
+    content: "Queues description...",
+    categoryId: "5dfa71a7e846280f4b75a4c9"
+});
+
+const course3 = new Course({
+    title: "Trees",
+    image: "nil",
+    content: "Trees description...",
+    categoryId: "5dfa71a7e846280f4b75a4c9"
+});
+
+var addCategory = (name, courses, difficulty) => {
     const category = new Category({
-        name: "Algorithm",
-        courses: [Course],
-        difficulty: String
+        name: name,
+        courses: courses,
+        difficulty: difficulty
     });
     category.save(function (err) {
         if (err) return handleError(err);
@@ -58,27 +97,19 @@ var addCategory = (name) => {
     });
 }
 
-deleteCourseById("5dfa3824bf4358c38294f328");
-deleteCourseById("5dfa3824bf4358c38294f329");
-deleteCourseById("5dfa3824bf4358c38294f32a");
-
-// addCourse("Algorithm");
-// addCourse("Data Structures");
-// addCourse("Machine Learning");
-
-// const course = new Course({
-//     title: "Tristan"
-// });
-// const course2 = new Course({
-//     title: "Manon"
-// });
-// course.save(function (err) {
-//     if (err) return handleError(err);
-//     console.log('saved !')
-// });
-// course2.save(function (err) {
-//     if (err) return handleError(err);
-//     console.log('saved !')
-// });
+var addCourse = () => {
+    course1.save(function (err) {
+        if (err) return handleError(err);
+        console.log('saved !')
+    });
+    course2.save(function (err) {
+        if (err) return handleError(err);
+        console.log('saved !')
+    });
+    course3.save(function (err) {
+        if (err) return handleError(err);
+        console.log('saved !')
+    });
+}
 
 module.exports = router;
