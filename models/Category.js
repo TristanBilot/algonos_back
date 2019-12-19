@@ -10,7 +10,11 @@ const CourseSchema = mongoose.Schema({
 const CategorySchema = mongoose.Schema({
     name: String,
     courses: [CourseSchema],
-    difficulty: String
+    difficulty: String,
+    image: {
+        data: Buffer, 
+        contentType: String
+    }
 });
 
 module.exports = mongoose.model('Category', CategorySchema);
