@@ -56,16 +56,16 @@ var deleteCourseById = (id) => {
     });
 }
 
-// insertCourse('Binary search', "some content", "5dfaa40e004aa727be2c303f");
-// insertCourse('Quick sort', "some content", "5dfaa40e004aa727be2c303f");
-// insertCourse('Bubble sort', "some content", "5dfaa40e004aa727be2c303f");
-// insertCourse('Heap sort', "some content", "5dfaa40e004aa727be2c303f");
-// insertCourse('Selection sort', "some content", "5dfaa40e004aa727be2c303f");
+// insertCourse('Binary search', "some content", "5dfb55f905b167d118e4de09");
+// insertCourse('Quick sort', "some content", "5dfb55f905b167d118e4de09");
+// insertCourse('Bubble sort', "some content", "5dfb55f905b167d118e4de09");
+// insertCourse('Heap sort', "some content", "5dfb55f905b167d118e4de09");
+// insertCourse('Selection sort', "some content", "5dfb55f905b167d118e4de09");
 
-// insertCourse('Stack', "some content", "5dfaa40e004aa727be2c3040");
-// insertCourse('Queue', "some content", "5dfaa40e004aa727be2c3040");
+// insertCourse('Stack', "some content", "5dfb55f905b167d118e4de0a");
+// insertCourse('Queue', "some content", "5dfb55f905b167d118e4de0a");
 
-// insertCourse('Supervised learning', "some content", "5dfaa40e004aa727be2c3041");
-// insertCourse('Unsupervised learning', "some content", "5dfaa40e004aa727be2c3041");
+// insertCourse('Supervised learning', "some content", "5dfb55f905b167d118e4de0b");
+// insertCourse('Unsupervised learning', "some content", "5dfb55f905b167d118e4de0b");
 
 module.exports = router;

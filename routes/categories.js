@@ -1,5 +1,4 @@
 const express = require('express');
-var fs = require('fs');
 const router = express.Router();
 const Category = require('../models/Category');
 
@@ -20,10 +19,7 @@ var insertCategory = (name, courses, difficulty, imagePath) => {
         name: name,
         courses: courses,
         difficulty: difficulty,
-        image: {
-            data: fs.readFileSync(imagePath),
-            contentType: 'image/png'
-        }
+        image: imagePath
     });
     category.save(function (err) {
         if (err) console.log(err);
@@ -38,8 +34,8 @@ var deleteCategoryById = (id) => {
     });
 }
 
-// insertCategory("Algorithm", [], "medium", "./resources/img/algorithm.png");
-// insertCategory("Data strctures", [], "medium", "./resources/img/data_struct.png");
-// insertCategory("Deep Learning", [], "medium", "./resources/img/ai.png");
+// insertCategory("Algorithm", [], "medium", "https://i.goopics.net/lpwGp.png");
+// insertCategory("Data strctures", [], "medium", "https://i.goopics.net/ELAeD.png");
+// insertCategory("Deep Learning", [], "medium", "https://i.goopics.net/QLDxV.png");
 
 module.exports = router;
