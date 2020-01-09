@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const CourseSchema = mongoose.Schema({
     title: String,
     content: String,
-    categoryId: String
+    categoryId: String,
+    percentage: String
 });
 
 module.exports = mongoose.model('Course', CourseSchema);

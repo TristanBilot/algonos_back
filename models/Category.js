@@ -3,14 +3,14 @@ const Course = require('../models/Course');
 
 const CourseSchema = mongoose.Schema({
     title: String,
-    image: String,
-    content: String
+    content: String,
+    categoryId: String,
+    percentage: String
 });
 
 const CategorySchema = mongoose.Schema({
     name: String,
     courses: [CourseSchema],
-    difficulty: String,
     image: String
 });
 

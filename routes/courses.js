@@ -27,6 +27,18 @@ router.get('/fetchWithCategoryId/:id', async (req, res) => {
     }
 });
 
+router.get('/fetchCourseContent/:id', async (req, res) => {
+    try {
+        const courseList = await Course.find({_id: req.params.id})
+        .then(function (courses) {
+            console.log(courses);
+            res.json(courses);
+        });
+    } catch (err) {
+        console.log('fetchCourseContent/ failed');
+    }
+});
+
 router.get('/add/:title', (req, res) => {
     const course = new Course({
         title: req.body.title
@@ -37,11 +49,12 @@ router.get('/add/:title', (req, res) => {
     });
 });
 
-var insertCourse = (title, content, categoryId) => {
+var insertCourse = (title, content, categoryId, percentage) => {
     const course = new Course({
         title: title,
         content: content,
-        categoryId: categoryId
+        categoryId: categoryId,
+        percentage: percentage
     });
     course.save(function (err) {
         if (err) console.log(err);
@@ -56,16 +69,15 @@ var deleteCourseById = (id) => {
     });
 }
 
-// insertCourse('Binary search', "some content", "5dfb55f905b167d118e4de09");
-// insertCourse('Quick sort', "some content", "5dfb55f905b167d118e4de09");
-// insertCourse('Bubble sort', "some content", "5dfb55f905b167d118e4de09");
-// insertCourse('Heap sort', "some content", "5dfb55f905b167d118e4de09");
-// insertCourse('Selection sort', "some content", "5dfb55f905b167d118e4de09");
+// insertCourse('Binary search', "some content", "5e15bd66353973e08a13fe5b", "34");
+// insertCourse('Bubble sort', "some content", "5e15bd66353973e08a13fe5b", "100");
+// insertCourse('Heap sort', "some content", "5e15bd66353973e08a13fe5b", "68");
+// insertCourse('Selection sort', "some content", "5e15bd66353973e08a13fe5b", "100");
 
-// insertCourse('Stack', "some content", "5dfb55f905b167d118e4de0a");
-// insertCourse('Queue', "some content", "5dfb55f905b167d118e4de0a");
+// insertCourse('Stack', "some content", "5e15bd66353973e08a13fe5d", "23");
+// insertCourse('Queue', "some content", "5e15bd66353973e08a13fe5d", "47");
 
-// insertCourse('Supervised learning', "some content", "5dfb55f905b167d118e4de0b");
-// insertCourse('Unsupervised learning', "some content", "5dfb55f905b167d118e4de0b");
+// insertCourse('Supervised learning', "some content", "5e15bd66353973e08a13fe5c", "100");
+// insertCourse('Unsupervised learning', "some content", "5e15bd66353973e08a13fe5c", "100");
 
 module.exports = router;
