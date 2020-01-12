@@ -1,8 +1,14 @@
 const mongoose = require('mongoose');
 
+const ContentSchema = mongoose.Schema({
+    text: String,
+    code: String,
+    complexity: Object
+});
+
 const CourseSchema = mongoose.Schema({
     title: String,
-    content: String,
+    content: ContentSchema,
     categoryId: String,
     percentage: String
 });
