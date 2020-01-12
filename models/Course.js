@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Category = require('../models/Content');
 
 const ContentSchema = mongoose.Schema({
     text: String,

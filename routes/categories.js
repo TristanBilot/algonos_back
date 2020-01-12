@@ -4,7 +4,7 @@ const Category = require('../models/Category');
 const Course = require('../models/Course');
 
 router.get('/fetch', async (req, res) => {
-    // console.log('[+] categories/fetch called.');
+    console.log('[+] categories/fetch called.');
     try {
         const category = await Category.find({}).then(function (categories) {
             console.log(categories);
@@ -38,28 +38,5 @@ router.get('/fetchPercentages/:id', async (req, res) => {
         console.log('fail' + err);
     }
 });
-
-var insertCategory = (name, courses, imagePath) => {
-    const category = new Category({
-        name: name,
-        courses: courses,
-        image: imagePath
-    });
-    category.save(function (err) {
-        if (err) console.log(err);
-        else console.log('category ' + category + ' saved !')
-    });
-}
-
-var deleteCategoryById = (id) => {
-    Category.findOneAndRemove({_id: id}, (err) => {
-        if (err) { console.log('failed to delete', err); }
-        else { console.log('delete is a success'); }
-    });
-}
-
-// insertCategory("Algorithm", [], "https://i.goopics.net/lpwGp.png");
-// insertCategory("Data structures", [], "https://i.goopics.net/ELAeD.png");
-// insertCategory("Deep Learning", [], "https://i.goopics.net/QLDxV.png");
 
 module.exports = router;

@@ -23,6 +23,9 @@ app.listen(port, () =>  {
 //DB Connection
 mongoose.connect(process.env.DB_CONNECTION, {useUnifiedTopology: true}, () => {
     console.log('[ ok ] connected to database');
+})
+.then(() => {
+    require('./database/insert');
 });
 
 mongoose.connection.on('error', err => {
