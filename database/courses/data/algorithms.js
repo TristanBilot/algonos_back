@@ -20,9 +20,19 @@ const fibo_iter = new Content({
     }
 });
 
+const hanoi = new Content({
+    text: "In the tower of Hanoï problem, you have three ‘towers’ on which differently sized rings are stacked on one another. A ring can only be on a larger one (or on the base if it is the first). The problem is solved when all the rings have been moved from the first to the last tower while respecting the previous rule and only moving the rings once at a time.",
+    code: "https://i.goopics.net/0q2DD.png",
+    complexity: {
+        worst: 'O(n)', 
+        average: 'O(n)', 
+        best: 'O(n))'
+    }
+});
+
 const binarySearch = new Content({
     text: "",
-    code: "https://i.goopics.net/vd057.png",
+    code: "https://i.goopics.net/OJ5n7.png",
     complexity: {
         worst: 'O(n²)', 
         average: 'O(n)', 
@@ -50,4 +60,4 @@ const dfs = new Content({
     }
 });
 
-module.exports = {binarySearch, bfs, dfs, fibo_iter, fibo_rec};
+module.exports = {binarySearch, bfs, dfs, fibo_iter, fibo_rec, hanoi};

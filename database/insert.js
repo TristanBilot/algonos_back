@@ -42,7 +42,8 @@ const createCourses = async () => {
     ];
 
     /* ALGORITHM */
-    cou.insertCourse('Fibonnaci', [algorithms.fibo_rec, algorithms.fibo_iter], categoriesId[0]);
+    cou.insertCourse('Fibonnaci', [algorithms.fibo_rec], categoriesId[0]);
+    cou.insertCourse('Hanoi Towers', [algorithms.hanoi], categoriesId[0]);
     cou.insertCourse('Binary search', [algorithms.binarySearch], categoriesId[0]);
     cou.insertCourse('Breadth First Search', [algorithms.bfs], categoriesId[0]);
     cou.insertCourse('Depth First Search', [algorithms.dfs], categoriesId[0]);
