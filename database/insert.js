@@ -42,20 +42,22 @@ const createCourses = async () => {
     ];
 
     /* ALGORITHM */
-    cou.insertCourse('Binary search', algorithms.binarySearch, categoriesId[0]);
-    cou.insertCourse('Breadth First Search', algorithms.bfs, categoriesId[0]);
-    cou.insertCourse('Depth First Search', algorithms.dfs, categoriesId[0]);
+    cou.insertCourse('Fibonnaci', [algorithms.fibo_rec, algorithms.fibo_iter], categoriesId[0]);
+    cou.insertCourse('Binary search', [algorithms.binarySearch], categoriesId[0]);
+    cou.insertCourse('Breadth First Search', [algorithms.bfs], categoriesId[0]);
+    cou.insertCourse('Depth First Search', [algorithms.dfs], categoriesId[0]);
 
     /* DATA STRUCTURE */
-    cou.insertCourse('Stack', data_str.stack, categoriesId[1]);
-    cou.insertCourse('Queue', data_str.queue, categoriesId[1]);
-    cou.insertCourse('Binary Tree', data_str.binaryTree, categoriesId[1]);
-    cou.insertCourse('Heap', data_str.heap, categoriesId[1]);
+    cou.insertCourse('Stack', [data_str.stack], categoriesId[1]);
+    cou.insertCourse('Queue', [data_str.queue], categoriesId[1]);
+    cou.insertCourse('Binary Tree', [data_str.binaryTree], categoriesId[1]);
+    cou.insertCourse('Heap', [data_str.heap], categoriesId[1]);
 
     /* SORTING */
-    cou.insertCourse('Bubble sort', sorts.bubbleSort, categoriesId[2]);
-    cou.insertCourse('Heap sort', sorts.heapSort, categoriesId[2]);
-    cou.insertCourse('Selection sort', sorts.selectionSort, categoriesId[2]);
+    cou.insertCourse('Bubble sort', [sorts.bubbleSort], categoriesId[2]);
+    cou.insertCourse('Heap sort', [sorts.heapSort], categoriesId[2]);
+    cou.insertCourse('Selection sort', [sorts.selectionSort], categoriesId[2]);
 };
 
+// createCategories();
 // createCourses();

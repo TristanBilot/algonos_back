@@ -9,7 +9,7 @@ const ContentSchema = mongoose.Schema({
 
 const CourseSchema = mongoose.Schema({
     title: String,
-    content: ContentSchema,
+    content: [ContentSchema],
     categoryId: String,
     percentage: String
 });
