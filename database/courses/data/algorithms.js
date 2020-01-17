@@ -22,6 +22,12 @@ const fibo_rec = [
     }
 ];
 
+const lca = [
+    {
+        image: "https://i.goopics.net/3yRx8.png"
+    }
+];
+
 const fibo_iter = {
     text: "Here is an example of the iterative algorithm.",
     code: "https://i.goopics.net/xPNkE.png",
@@ -62,4 +68,4 @@ const dfs = {
     }
 };
 
-module.exports = {binarySearch, bfs, dfs, fibo_iter, fibo_rec};
+module.exports = {binarySearch, bfs, dfs, fibo_iter, fibo_rec, lca};

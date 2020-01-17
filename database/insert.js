@@ -43,12 +43,13 @@ const createCourses = async () => {
 
     /* ALGORITHM */
     cou.insertCourse('Fibonnaci', algorithms.fibo_rec, categoriesId[0]);
+    cou.insertCourse('Lowest Common Ancestor', algorithms.lca, categoriesId[0]);
     // cou.insertCourse('Binary search', algorithms.binarySearch, categoriesId[0]);
     // cou.insertCourse('Breadth First Search', algorithms.bfs, categoriesId[0]);
     // cou.insertCourse('Depth First Search', algorithms.dfs, categoriesId[0]);
 
     // /* DATA STRUCTURE */
-    // cou.insertCourse('Stack', data_str.stack, categoriesId[1]);
+    cou.insertCourse('Stack', data_str.stack, categoriesId[1]);
     // cou.insertCourse('Queue', data_str.queue, categoriesId[1]);
     // cou.insertCourse('Binary Tree', data_str.binaryTree, categoriesId[1]);
     // cou.insertCourse('Heap', data_str.heap, categoriesId[1]);
